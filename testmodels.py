@@ -2,11 +2,21 @@ import torch
 from BallDrop import BallDropNet
 import numpy as np
 import matplotlib.pyplot as plt
-from main import drop, time_taken
+
+
+def drop(time, initial_velocity, initial_height):
+    return -4.9 * time ** 2 + initial_velocity * time + initial_height
+
+
+# Returns total time the ball will spend in the air given initial conditions
+def time_taken(initial_velocity, initial_height):
+    return (-initial_velocity - np.sqrt(initial_velocity ** 2 + 4 * 4.9 * initial_height)) / (2 * -4.9)
+
+
 
 # Imports BallDrop model
-imported_model = BallDropNet(3,500,1)
-imported_model.load_state_dict(torch.load('BallDropModel.pth'))
+imported_model = BallDropNet(3,1000,1)
+imported_model.load_state_dict(torch.load('FirstModel.pth'))
 
 
 # Function to plot real curves vs network's predicted curves

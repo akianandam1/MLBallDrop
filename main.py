@@ -80,5 +80,5 @@ def fit(epochs, lr, batch_size, model, opt_func=torch.optim.SGD):
 fit(300000, 1e-5, 100, model)
 
 # Saves the model
-torch.save(model.state_dict(), 'BallDropModel.pth')
+torch.save(model.state_dict(), 'FirstModel.pth')
 
