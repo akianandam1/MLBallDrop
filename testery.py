@@ -159,12 +159,3 @@ def fit(num_epochs, model, loss_fn, opt):
 # plt.plot(t,predictions)
 # plt.show()
 
-# new_model = nn.Linear(5,6)
-# print(new_model.weight)
-# print(new_model.bias)
-# torch.save(new_model.state_dict(), 'test.pth')
-
-# third_model = nn.Linear(5,6)
-# third_model.load_state_dict(torch.load('test.pth'))
-# print(third_model.weight)
-# print(third_model.bias)
